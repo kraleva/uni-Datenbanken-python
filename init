@@ -1,0 +1,6 @@
+#!/bin/bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+sudo PGPASSWORD=kraleva1 -u postgres psql -f "$DIR/initialize.sql"
+echo "Database created"
+sudo PGPASSWORD=password -u viki psql minifb -f "$DIR/createTables.sql"
+echo "Tables created"
